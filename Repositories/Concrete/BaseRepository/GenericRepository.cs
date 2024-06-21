@@ -51,7 +51,7 @@ namespace CoreDepartmentProject.Repositories.Concrete.BaseRepository
                     return new ErrorResult(Messages.errorUpdateMessage);
                 }
 
-                updatedData.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                updatedData.State = EntityState.Modified;
                 _context.SaveChanges();
             }
 

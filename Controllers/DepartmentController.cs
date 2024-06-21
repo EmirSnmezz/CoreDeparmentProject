@@ -34,6 +34,7 @@ namespace CoreDepartmentProject.Controllers
             }
             return View(result);
         }
+        [HttpPost]
         public IActionResult Update(Department department)
         {
             var result = _departmentRepository.Update(department).IsSuccess;

@@ -25,12 +25,6 @@ namespace CoreDepartmentProject.Controllers
             return View(result);
         }
 
-        public IActionResult GetDetails(int id)
-        {
-            return null;
-        }
-
-
         [HttpGet]
         public IActionResult Update(int id)
         {

@@ -1,1 +1,16 @@
-﻿
+﻿@using CoreDepartmentProject.Models.Entites.Concrete;
+@model Department;
+<div class="header" style=" justify-content:center; align-items:center; ">
+    <h1 class="h-1" style="text-align:center; margin-top:8%;"> Yeni Departman Ekle</h1>
+    <hr / style="width:80%; margin-left:10%;">
+</div>
+
+<div class="container-fluid" style="width:70%; background-color:gray; padding-top:10%; padding-bottom:10%; color:white; margin-top:10%;">
+    <div class="form" style="display:flex; flex-direction:row; align-items:center; justify-content:center;">
+        <div class="row col-lg-8">
+           <label class="col-form-label" style="font-size:larger;"> Departman Adı </label>
+            @Html.TextBoxFor(x => x.Name, new{@class="form-control"})
+            @Html.ActionLink("Yeni Departman Ekle", "Add", "Department", null, new{@class ="btn btn-primary col-lg-3 col-md-3 col-sm-3 col-xs-3", @style=" margin-top:2%;"})
+        </div>
+    </div>
+</div>

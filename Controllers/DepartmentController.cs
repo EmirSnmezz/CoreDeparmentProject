@@ -19,6 +19,12 @@ namespace CoreDepartmentProject.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Add(Department department)
+        {
+            _departmentRepository.Add(department);
+            return RedirectToAction("Index");
+        }
         public IActionResult Index()
         {
             var result = _departmentRepository.GetAll().Data;

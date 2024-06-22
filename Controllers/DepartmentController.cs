@@ -14,7 +14,11 @@ namespace CoreDepartmentProject.Controllers
         {
             _departmentRepository = departmentRepository;
         }
-
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             var result = _departmentRepository.GetAll().Data;

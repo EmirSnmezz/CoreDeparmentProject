@@ -1,4 +1,5 @@
 ﻿using CoreDepartmentProject.Core.Constants;
+using CoreDepartmentProject.Core.Utilities.DataResults;
 using CoreDepartmentProject.Models;
 using CoreDepartmentProject.Models.Entites.Concrete;
 using CoreDepartmentProject.Repositories.Abstract;
@@ -13,6 +14,7 @@ namespace CoreDepartmentProject.Controllers
         {
             _departmentRepository = departmentRepository;
         }
+
         public IActionResult Index()
         {
             var result = _departmentRepository.GetAll().Data;
@@ -23,6 +25,7 @@ namespace CoreDepartmentProject.Controllers
         {
             return null;
         }
+
 
         [HttpGet]
         public IActionResult Update(int id)
@@ -56,6 +59,13 @@ namespace CoreDepartmentProject.Controllers
             _departmentRepository.Delete(result);
             
             return RedirectToAction("Index");
+        }
+
+        public IActionResult GetDetail (int id)
+        {
+            Department result = (Department)_departmentRepository.GetEntity(id).Data;
+            return View(result);
+
         }
     }
 }

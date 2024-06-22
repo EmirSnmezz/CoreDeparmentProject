@@ -1,11 +1,14 @@
 ﻿@using CoreDepartmentProject.Models.Entites.Concrete;
 @model Department;
-<form class="formContainer" action=@Url.ActionLink("Update", "Department") method="post" >
-    <div class="formBody" style="display:flex; flex-direction:column;justify-content:center;align-items:center; margin-top:5%;">
-        <div class="row col-lg-6">
-            <label class="col-form-label"> Departman Adı </label>
-            @Html.TextBoxFor(x => x.Name, new{@class = "form-control"})
+
+    <form class="formContainer" action=@Url.ActionLink("Update", "Department") method="post">
+        <div class="formBody" style="display:flex; flex-direction:column;justify-content:center;align-items:center; margin-top:5%;">
+            <div class="row col-lg-6">
+                @Html.HiddenFor(x => x.ID)
+                <label class="col-form-label"> Departman Adı </label>
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <button class="btn btn-primary btn-lg" type="submit" style="display:flex;justify-content:center;align-content:center;align-items:center;"> Ürün Ekle  </button>
-</form>
+        <button class="btn btn-primary btn-lg" type="submit" style="display:flex;justify-content:center;align-content:center;align-items:center;"> Ürün Ekle  </button>
+    </form>
+

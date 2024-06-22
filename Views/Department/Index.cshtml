@@ -1,26 +1,30 @@
 ﻿@using CoreDepartmentProject.Models.Entites.Concrete;
 @model List<Department>;
 
-<table class="table table-bordered table-hover" style="margin-top:2%;">
-    <tr>
-        <th> Departman Adı </th>
-        <th> işlemler </th>
-        <th> Detaylar </th>
-    </tr>
-    @foreach(var item in Model)
-    {
-        <tr>
-            <td>@item.Name</td>
-            <td>
-                @Html.ActionLink("Güncelle", "Update", "Department", new { @id = item.ID }, new { @class = "btn btn-success" })
-                @Html.ActionLink("Sil", "Delete", "Department", new { @id = item.ID }, new { @class = "btn btn-danger" })
-            </td>
-            <td>
-                @Html.ActionLink("Detaylar", "GetDetails", "Department", new{@id = item.ID}, new {@class="btn btn-warning"})
-            </td>
-        </tr>
-    }
-</table>
+<div class="container-fluid" style="width:80%;">
 
-@Html.ActionLink("Yeni Departman Ekle", "Add", "Department", null,  new{@class="btn btn-primary"})
+    <table class="table table-bordered table-hover" style="margin-top:2%;">
+        <tr>
+            <th> Departman Adı </th>
+            <th> işlemler </th>
+            <th> Detaylar </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Update", "Department", new { @id = item.ID }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Sil", "Delete", "Department", new { @id = item.ID }, new { @class = "btn btn-danger" })
+                </td>
+                <td>
+                    @Html.ActionLink("Detaylar", "GetDetail", "Department", new { @id = item.ID }, new { @class = "btn btn-warning" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+
+@Html.ActionLink("Yeni Departman Ekle", "Add", "Department", null, new { @class = "btn btn-primary", @style="margin-left:10.5%;"})
 

@@ -1,0 +1,36 @@
+﻿@using CoreDepartmentProject.Models.Entites.Concrete;
+@model Customer;
+@{
+    var departments = TempData["departments"] as List<SelectListItem>;
+}
+<div class="header" style=" justify-content:center; align-items:center; ">
+    <h1 class="h-1" style="text-align:center; margin-top:8%;"> Yeni Departman Ekle</h1>
+    <hr / style="width:80%; margin-left:10%;">
+</div>
+
+<div class="container-fluid" style="width:70%; background-color:brown; padding-top:10%; padding-bottom:10%; margin-top:5%;">
+    <form class="form" method="post" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+
+        <div class="row col-lg-8">
+            <label class="col-form-label" style="font-size:larger;"> Personel Adı </label>
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+        </div>
+
+        <div class="row col-lg-8">
+            <label class="col-form-label" style="font-size:larger;"> Personel Soyadı </label>
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+        </div>
+
+        <div class="row col-lg-8">
+            <label class="col-form-label" style="font-size:larger;"> Departmant Adı </label>
+            @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)departments, "Departman Seçiniz", new { @class = "form-control", @placeholder = "Marka", @style = "text-align:center;", @value = "Marka;", @required = "" })
+        </div>
+
+        <div class="row col-lg-8">
+            <label class="col-form-label" style="font-size:larger;"> Personelin Yaşadığı Şehir </label>
+            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+        </div>
+
+        <button class="btn btn-primary btn-lg" type="submit" style="margin-top:2%"> Yeni Departman Ekle  </button>
+    </form>
+</div>

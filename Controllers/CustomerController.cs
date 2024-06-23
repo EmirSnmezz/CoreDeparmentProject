@@ -30,11 +30,13 @@ namespace CoreDepartmentProject.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            TempData["departments"] = _customerRepository.SelectOfDepartmentData();
             return View();
         }
 
         public IActionResult Add(Customer customer)
         {
+            _customerRepository.Add(customer);
             return RedirectToAction("Index");
         }
 

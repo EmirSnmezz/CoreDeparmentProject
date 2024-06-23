@@ -2,6 +2,7 @@
 using CoreDepartmentProject.Core.Utilities.DataResults;
 using CoreDepartmentProject.Models.Dtos.Concrete;
 using CoreDepartmentProject.Models.Entites.Concrete;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CoreDepartmentProject.Repositories.Abstract
 {
@@ -9,5 +10,6 @@ namespace CoreDepartmentProject.Repositories.Abstract
     {
         public List<CustomerDto> GetAllDto();
         public CustomerDto GetDetailOfDto(int id);
+        public List<SelectListItem> SelectOfDepartmentData();
     }
 }

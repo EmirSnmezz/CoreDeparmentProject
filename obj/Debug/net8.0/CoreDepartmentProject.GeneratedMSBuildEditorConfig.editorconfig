@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\emirc\source\repos\CoreDepartmentProject\CoreDepartmentProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/emirc/source/repos/CoreDepartmentProject/CoreDepartmentProject/Views/Customer/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/emirc/source/repos/CoreDepartmentProject/CoreDepartmentProject/Views/Customer/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

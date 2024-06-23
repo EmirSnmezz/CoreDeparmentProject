@@ -1,28 +1,32 @@
-﻿@using CoreDepartmentProject.Models.Entites.Concrete;
-@model List<Customer>
+﻿@using CoreDepartmentProject.Models.Dtos.Concrete;
+@model List<CustomerDto>
 
 <div class="container-fluid">
-    <table class="table table-bordered table-hover" style="text-align:center;">
+    <table class="table table-bordered table-hover" style="margin-top:2%; text-align:center;">
         <tr>
             <th> Personel Adı </th>
             <th> Personel Soyadı </th>
             <th> Şehir</th>
             <th> Departman ID </th>
-            <th colspan="2" > İşlemler </th>
+            <th> İşlemler </th>
+            <th> Detay </th>
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
-                <td> @item.FirstName </td>
-                <td> @item.LastName </td>
-                <td> @item.City </td>
-                <td> @item.DepartmentId</td>
-                <td> 
-                    @Html.ActionLink("Güncelle", "Update", "Customer", null,  new { @class = "btn btn-warning", @style = "width : 40%;"})
+                <td> @item.CustomerName </td>
+                <td> @item.CustomerLastName </td>
+                <td> @item.CustomerCity </td>
+                <td> @item.DepartmentName </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Update", "Customer", null, new { @class = "btn btn-success", @style = "width : 40%;" })
                     @Html.ActionLink("Sil", "Delete", "Customer", null, new { @class = "btn btn-danger", @style = "width : 40%;" })
                 </td>
+                <td> @Html.ActionLink("Detaya Git", "GetDetail", "Customer", null, new { @class = "btn btn-warning", @style = "width : 60%;" })</td>
             </tr>
         }
     </table>
+
+    @Html.ActionLink("Yeni Personel Ekle", "Add", "Customer", null, new { @class = "btn btn-primary", @style = "margin-left:10.5%;" })
 </div>

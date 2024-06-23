@@ -3,7 +3,7 @@
 
 <div class="container-fluid" style="width:80%;">
 
-    <table class="table table-bordered table-hover" style="margin-top:2%;">
+    <table class="table table-bordered table-hover" style="margin-top:2%; text-align:center;">
         <tr>
             <th> Departman Adı </th>
             <th> işlemler </th>
@@ -14,11 +14,11 @@
             <tr>
                 <td>@item.Name</td>
                 <td>
-                    @Html.ActionLink("Güncelle", "Update", "Department", new { @id = item.ID }, new { @class = "btn btn-success" })
-                    @Html.ActionLink("Sil", "Delete", "Department", new { @id = item.ID }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Güncelle", "Update", "Department", new { @id = item.ID }, new { @class = "btn btn-success", @style = "width : 40%;" })
+                    @Html.ActionLink("Sil", "Delete", "Department", new { @id = item.ID }, new { @class = "btn btn-danger", @style = "width : 40%;" })
                 </td>
                 <td>
-                    @Html.ActionLink("Detaylar", "GetDetail", "Department", new { @id = item.ID }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Detaya Git", "GetDetail", "Department", new { @id = item.ID }, new { @class = "btn btn-warning", @style = "width : 60%;" })
                 </td>
             </tr>
         }
@@ -26,5 +26,5 @@
 </div>
 
 
-@Html.ActionLink("Yeni Departman Ekle", "Add", "Department", null, new { @class = "btn btn-primary", @style="margin-left:10.5%;"})
+@Html.ActionLink("Yeni Departman Ekle", "Add", "Department", null, new { @class = "btn btn-primary", @style = "margin-left:10.5%;" })
 

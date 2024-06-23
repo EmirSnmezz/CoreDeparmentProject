@@ -55,17 +55,17 @@ namespace CoreDepartmentProject.Controllers
         public IActionResult Delete(int id)
         {
             var result = _departmentRepository.GetEntity(id).Data;
-            
+
             if (result == null)
             {
                 throw new Exception(Messages.GetDataErrorMessage);
             }
             _departmentRepository.Delete(result);
-            
+
             return RedirectToAction("Index");
         }
 
-        public IActionResult GetDetail (int id)
+        public IActionResult GetDetail(int id)
         {
             Department result = (Department)_departmentRepository.GetEntity(id).Data;
             return View(result);

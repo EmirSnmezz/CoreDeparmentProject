@@ -1,0 +1,28 @@
+﻿@using CoreDepartmentProject.Models.Entites.Concrete;
+@model List<Customer>
+
+<div class="container-fluid">
+    <table class="table table-bordered table-hover" style="text-align:center;">
+        <tr>
+            <th> Personel Adı </th>
+            <th> Personel Soyadı </th>
+            <th> Şehir</th>
+            <th> Departman ID </th>
+            <th colspan="2" > İşlemler </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.FirstName </td>
+                <td> @item.LastName </td>
+                <td> @item.City </td>
+                <td> @item.DepartmentId</td>
+                <td> 
+                    @Html.ActionLink("Güncelle", "Update", "Customer", null,  new { @class = "btn btn-warning", @style = "width : 40%;"})
+                    @Html.ActionLink("Sil", "Delete", "Customer", null, new { @class = "btn btn-danger", @style = "width : 40%;" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

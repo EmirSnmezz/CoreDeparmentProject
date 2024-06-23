@@ -20,13 +20,13 @@
                 <td> @item.CustomerCity </td>
                 <td> @item.DepartmentName </td>
                 <td>
-                    @Html.ActionLink("Güncelle", "Update", "Customer", null, new { @class = "btn btn-success", @style = "width : 40%;" })
-                    @Html.ActionLink("Sil", "Delete", "Customer", null, new { @class = "btn btn-danger", @style = "width : 40%;" })
+                    @Html.ActionLink("Güncelle", "Update", "Customer", new { @id = item.Id }, new { @class = "btn btn-success", @style = "width : 40%;" })
+                    @Html.ActionLink("Sil", "Delete", "Customer", new{@id = item.Id}, new { @class = "btn btn-danger", @style = "width : 40%;" })
                 </td>
-                <td> @Html.ActionLink("Detaya Git", "GetDetail", "Customer", null, new { @class = "btn btn-warning", @style = "width : 60%;" })</td>
+                <td> @Html.ActionLink("Detaya Git", "GetDetails", "Customer", new { @id = item.Id }, new { @class = "btn btn-warning", @style = "width : 60%;" })</td>
             </tr>
         }
     </table>
 
-    @Html.ActionLink("Yeni Personel Ekle", "Add", "Customer", null, new { @class = "btn btn-primary", @style = "margin-left:10.5%;" })
+    @Html.ActionLink("Yeni Personel Ekle", "Add", "Customer", null, new { @class = "btn btn-primary" })
 </div>

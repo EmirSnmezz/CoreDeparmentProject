@@ -1,0 +1,26 @@
+﻿@using CoreDepartmentProject.Models.Dtos.Concrete;
+@model CustomerDto
+
+<div class="container-fluid" style="width:80%; margin-top:2%;">
+
+    <div class="row col-lg-12">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th> Personel Adı </th>
+                <th> Perosnel Soyadı </th>
+                <th> Personelin Yaşadığı Şehir </th>
+                <th> Personelin Çalıştığı Departman </th>
+            </tr>
+
+            <tr>
+                <td> @Model.CustomerName </td>
+                <td> @Model.CustomerLastName </td>
+                <td> @Model.CustomerCity </td>
+                <td> @Model.DepartmentName</td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+

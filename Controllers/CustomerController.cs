@@ -19,5 +19,39 @@ namespace CoreDepartmentProject.Controllers
             var data = _customerRepository.GetAllDto();
             return View(data);
         }
+
+        public IActionResult GetDetails(int id)
+        {
+            var result = _customerRepository.GetDetailOfDto(id);
+
+            return View("Detail", result);
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        public IActionResult Add(Customer customer)
+        {
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Update()
+        {
+            return View();
+        }
+
+        public IActionResult Update(Customer customer)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -10,9 +10,9 @@ namespace CoreDepartmentProject.Repositories
 {
     public class CustomerRepository : GenericRepository<Customer>, ICustomerRepository
     {
-        public  List<CustomerDto> GetAllDto()
+        public List<CustomerDto> GetAllDto()
         {
-            
+
             using (Context context = new Context())
             {
                 var data = (from customerdata in context.Customers
@@ -25,10 +25,35 @@ namespace CoreDepartmentProject.Repositories
                                 CustomerLastName = customerdata.LastName,
                                 CustomerCity = customerdata.City,
                                 DepartmentName = departmentdata.Name
-                            }).ToList() ;
-                return data ;
+                            }).ToList();
+                return data;
 
             }
         }
+            public CustomerDto GetDetailOfDto(int id)
+            {
+                using (Context context = new Context())
+                {
+                    CustomerDto data = (from customerdata in context.Customers
+                               join departmentData in context.Departments
+                               on customerdata.DepartmentId equals departmentData.ID
+                               where customerdata.ID == id
+                               select new CustomerDto
+                               {
+                                   Id = customerdata.ID,
+                                   CustomerName = customerdata.FirstName,
+                                   CustomerLastName = customerdata.LastName,
+                                   CustomerCity = customerdata.City,
+                                   DepartmentName = departmentData.Name
+                               }).First (x => x.Id == id );
+
+                if(data == null)
+                {
+                    throw new Exception("Null");
+                }
+                    return data;
+                }
+            }
+        }
     }
-}
+

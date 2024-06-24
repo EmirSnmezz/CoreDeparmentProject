@@ -42,6 +42,8 @@ namespace CoreDepartmentProject.Controllers
 
         public IActionResult Delete(int id)
         {
+            var result = _customerRepository.GetEntity(id).Data;
+            _customerRepository.Delete(result);
             return RedirectToAction("Index");
         }
 

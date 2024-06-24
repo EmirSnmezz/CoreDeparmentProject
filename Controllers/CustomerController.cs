@@ -48,7 +48,7 @@ namespace CoreDepartmentProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Update()
+        public IActionResult Update(int id)
         {
             return View();
         }

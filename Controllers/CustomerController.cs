@@ -1,6 +1,8 @@
-﻿using CoreDepartmentProject.Models;
+﻿using CoreDepartmentProject.Core.Constants;
+using CoreDepartmentProject.Models;
 using CoreDepartmentProject.Models.Entites.Concrete;
 using CoreDepartmentProject.Repositories.Abstract;
+using CoreDepartmentProject.Repositories.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -50,11 +52,19 @@ namespace CoreDepartmentProject.Controllers
         [HttpGet]
         public IActionResult Update(int id)
         {
-            return View();
+            var result = _customerRepository.GetEntity(id).Data;
+            if (result == null)
+            {
+                throw new Exception(Messages.GetDataErrorMessage);
+            }
+
+            ViewBag.Departments = _customerRepository.SelectOfDepartmentData();
+            return View(result);
         }
 
         public IActionResult Update(Customer customer)
         {
+            _customerRepository.Update(customer);
             return RedirectToAction("Index");
         }
     }

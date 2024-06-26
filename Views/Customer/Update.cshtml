@@ -1,10 +1,10 @@
 ﻿@using CoreDepartmentProject.Models.Entites.Concrete;
 @model Customer;
 @{
-    var departments = TempData["departments"] as List<SelectListItem>;
+    var departments = ViewBag.Departments as List<SelectListItem>;
 }
 <div class="header" style=" justify-content:center; align-items:center; ">
-    <h1 class="h-1" style="text-align:center; margin-top:2%;"> Yeni Departman Ekle</h1>
+    <h1 class="h-1" style="text-align:center; margin-top:2%;"> Çalışan Güncelle </h1>
     <hr / style="width:70%; margin-left:10%;">
 </div>
 
@@ -23,7 +23,7 @@
 
         <div class="row col-lg-8">
             <label class="col-form-label" style="font-size:larger;"> Departmant Adı </label>
-            @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)departments, "Departman Seçiniz", new { @class = "form-control", @placeholder = "Marka", @style = "text-align:center;", @value = "Marka;", @required = "" })
+            @Html.DropDownListFor(x => x.DepartmentId, departments, "Departman Seçiniz", new { @class = "form-control", @placeholder = "Marka", @style = "text-align:center;", @value = "Marka;", @required = "" })
         </div>
 
         <div class="row col-lg-8">
@@ -31,6 +31,6 @@
             @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
         </div>
 
-        <button class="btn btn-primary btn-lg" type="submit" style="margin-top:2%"> Personel Ekle  </button>
+        <button class="btn btn-primary btn-lg" type="submit" style="margin-top:2%"> Güncelle </button>
     </form>
 </div>

@@ -69,7 +69,6 @@ namespace CoreDepartmentProject.Controllers
         {
             Department result = (Department)_departmentRepository.GetEntity(id).Data;
             return View(result);
-
         }
     }
 }

@@ -9,10 +9,11 @@
 </div>
 
 <div class="container-fluid" style="width:40%; background-color:#3C3E42; padding-top:5%; padding-bottom:5%; margin-top:2%; opacity:0.8; color:white;">
-    <form class="form" method="post" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+    <form class="form" action="@Url.Action("Update", "Customer")" method="post" style="display:flex; flex-direction:column;justify-content:center;align-items:center; margin-top:5%;">
 
         <div class="row col-lg-8">
             <label class="col-form-label" style="font-size:larger;"> Personel Adı </label>
+            @Html.HiddenFor(x => x.ID)
             @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
         </div>
 

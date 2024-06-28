@@ -3,7 +3,7 @@
 
 <div class="container-fluid" style="width:80%;">
 
-    <table class="table table-bordered table-hover" style="margin-top:2%; text-align:center;">
+    <table class="table table-bordered table-hover" style="margin-top:2%; text-align:center;  margin-left:5%;">
         <tr>
             <th> Departman Adı </th>
             <th> işlemler </th>
@@ -23,7 +23,9 @@
             </tr>
         }
     </table>
+
+    @Html.ActionLink("Yeni Departman Ekle", "Add", "Department", null, new { @class = "btn btn-primary", @style = "margin-left:5%;" })
 </div>
 
-@Html.ActionLink("Yeni Departman Ekle", "Add", "Department", null, new { @class = "btn btn-primary", @style = "margin-left:10.5%;" })
+
 

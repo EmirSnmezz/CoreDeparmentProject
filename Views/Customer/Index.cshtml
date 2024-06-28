@@ -3,12 +3,12 @@
 
 
 <div class="container-fluid" style="width:80%;">
-    <table class="table table-bordered table-hover" style="margin-top:2%; text-align:center;">
+    <table class="table table-bordered table-hover" style="margin-top:2%; text-align:center; margin-left:5%;">
         <tr>
             <th> Personel Adı </th>
             <th> Personel Soyadı </th>
             <th> Şehir</th>
-            <th> Departman ID </th>
+            <th> Departman Adı </th>
             <th> İşlemler </th>
             <th> Detay </th>
         </tr>
@@ -29,5 +29,5 @@
         }
     </table>
 
-    @Html.ActionLink("Yeni Personel Ekle", "Add", "Customer", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Yeni Personel Ekle", "Add", "Customer", null, new { @class = "btn btn-primary", @style = "margin-left:5%;" })
 </div>

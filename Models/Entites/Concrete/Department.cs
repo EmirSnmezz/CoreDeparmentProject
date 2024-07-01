@@ -1,4 +1,5 @@
 ﻿using CoreDepartmentProject.Models.Entites.Abstract;
+using System.ComponentModel.DataAnnotations;
 
 namespace CoreDepartmentProject.Models.Entites.Concrete
 {

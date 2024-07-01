@@ -1,19 +1,19 @@
 ﻿using CoreDepartmentProject.Core.Constants;
+using CoreDepartmentProject.Core.Constants.Results;
 using CoreDepartmentProject.Core.Utilities.DataResults;
 using CoreDepartmentProject.Models;
 using CoreDepartmentProject.Models.Entites.Concrete;
 using CoreDepartmentProject.Repositories.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace CoreDepartmentProject.Controllers
 {
     public class DepartmentController : Controller
     {
         public IDepartmentRepository _departmentRepository;
-        public DepartmentController(IDepartmentRepository departmentRepository)
-        {
-            _departmentRepository = departmentRepository;
-        }
+        public DepartmentController(IDepartmentRepository departmentRepository) => _departmentRepository = departmentRepository;
+
         [HttpGet]
         public IActionResult Add()
         {
@@ -27,7 +27,7 @@ namespace CoreDepartmentProject.Controllers
         }
         public IActionResult Index()
         {
-            var result = _departmentRepository.GetAll().Data;
+            var result = _departmentRepository.GetAll().Data ;
             return View(result);
         }
 
@@ -68,7 +68,21 @@ namespace CoreDepartmentProject.Controllers
         public IActionResult GetDetail(int id)
         {
             Department result = (Department)_departmentRepository.GetEntity(id).Data;
+            ViewBag.CustomersOfDepartment = _departmentRepository.GetCustomersById(id).Data;
             return View(result);
+        }
+
+        public JsonResult jsonTest()
+        {
+            var result = _departmentRepository.GetAll().Data;
+
+            List<JsonResult>? jsonResult = new List<JsonResult>();
+            foreach (var item in result)
+            {
+                jsonResult.Add(Json(item));
+            }
+
+            return Json(jsonResult);
         }
     }
 }

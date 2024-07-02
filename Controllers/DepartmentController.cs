@@ -4,6 +4,7 @@ using CoreDepartmentProject.Core.Utilities.DataResults;
 using CoreDepartmentProject.Models;
 using CoreDepartmentProject.Models.Entites.Concrete;
 using CoreDepartmentProject.Repositories.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
@@ -13,6 +14,13 @@ namespace CoreDepartmentProject.Controllers
     {
         public IDepartmentRepository _departmentRepository;
         public DepartmentController(IDepartmentRepository departmentRepository) => _departmentRepository = departmentRepository;
+
+        [Authorize]
+        public IActionResult Index()
+        {
+            var result = _departmentRepository.GetAll().Data ;
+            return View(result);
+        }
 
         [HttpGet]
         public IActionResult Add()
@@ -24,11 +32,6 @@ namespace CoreDepartmentProject.Controllers
         {
             _departmentRepository.Add(department);
             return RedirectToAction("Index");
-        }
-        public IActionResult Index()
-        {
-            var result = _departmentRepository.GetAll().Data ;
-            return View(result);
         }
 
         [HttpGet]

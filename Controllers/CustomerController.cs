@@ -3,6 +3,7 @@ using CoreDepartmentProject.Models;
 using CoreDepartmentProject.Models.Entites.Concrete;
 using CoreDepartmentProject.Repositories.Abstract;
 using CoreDepartmentProject.Repositories.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -16,15 +17,16 @@ namespace CoreDepartmentProject.Controllers
         {
             _customerRepository = customerRepository;
         }
+        [Authorize]
         public IActionResult Index()
         {
             var data = _customerRepository.GetAllDto();
             return View(data);
         }
 
-        public IActionResult GetDetails(int id)
+        public IActionResult GetDetails(int Id)
         {
-            var result = _customerRepository.GetDetailOfDto(id);
+            var result = _customerRepository.GetDetailOfDto(Id);
 
             return View("Detail", result);
         }

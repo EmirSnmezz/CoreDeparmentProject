@@ -24,7 +24,7 @@
                     @Html.ActionLink("Güncelle", "Update", "Customer", new { @id = item.Id }, new { @class = "btn btn-success", @style = "width : 40%;" })
                     @Html.ActionLink("Sil", "Delete", "Customer", new{@id = item.Id}, new { @class = "btn btn-danger", @style = "width : 40%;" })
                 </td>
-                <td> @Html.ActionLink("Detaya Git", "GetDetails", "Customer", new { @id = item.Id }, new { @class = "btn btn-warning", @style = "width : 60%;" })</td>
+                <td> @Html.ActionLink("Detaya Git", "GetDetails", "Customer", new { @Id = item.Id }, new { @class = "btn btn-warning", @style = "width : 60%;" })</td>
             </tr>
         }
     </table>

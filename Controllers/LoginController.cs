@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CoreDepartmentProject.Models.Entites.Concrete;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CoreDepartmentProject.Controllers
 {
@@ -9,8 +10,10 @@ namespace CoreDepartmentProject.Controllers
             return View();
         }
 
-        public IActionResult Login() 
+        [HttpPost]
+        public async Task <IActionResult> Login(Admin admin)  // Identity kullanacağımız için asenkron ifadesini kullanmamız gerekmektedir. Eğer bir methodda async ifadesi varsa orada Task<dönüşTipi> olması gerekmektedir.
         { 
+            
             return View(); 
         }
 

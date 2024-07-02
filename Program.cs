@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<Context, Context>();
 builder.Services.AddSingleton<ICustomerRepository, CustomerRepository>();
 builder.Services.AddSingleton<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddSingleton<IAdminRepository, AdminRepository>();
 builder.Services.AddAuthentication
     (CookieAuthenticationDefaults.AuthenticationScheme) // CookieAuthenticationDefaults'un gelebilmesi için yukarýdaki Microsoft.AspNetCore.Authentication.Cookies'in using ile eklenmesi gerekemektedir.
     .AddCookie
@@ -21,6 +22,8 @@ builder.Services.AddAuthentication
 var app = builder.Build();
 
 app.UseStaticFiles();
+
+app.UseAuthentication();
 
 app.MapControllerRoute
     (

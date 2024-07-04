@@ -1,15 +1,15 @@
 ﻿using CoreDepartmentProject.Core.Constants;
-using CoreDepartmentProject.Models;
 using CoreDepartmentProject.Models.Entites.Concrete;
 using CoreDepartmentProject.Repositories.Abstract;
-using CoreDepartmentProject.Repositories.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 namespace CoreDepartmentProject.Controllers
 {
-    public class CustomerController : Controller
+
+	[Authorize]
+	public class CustomerController : Controller
     {
 
         ICustomerRepository _customerRepository;
@@ -17,7 +17,6 @@ namespace CoreDepartmentProject.Controllers
         {
             _customerRepository = customerRepository;
         }
-        [Authorize]
         public IActionResult Index()
         {
             var data = _customerRepository.GetAllDto();

@@ -1,1 +1,58 @@
-﻿<p> Test </p>
+﻿@using CoreDepartmentProject.Core.Utilities.DataResults
+@using CoreDepartmentProject.Models.Dtos.Concrete
+@using CoreDepartmentProject.Models.Entites.Concrete;
+@model  List<CustomerDto>
+@* 
+<table class="table table-bordered table-hover" style="margin-top:2%; text-align:center;  margin-left:5%;">
+    <tr>
+        <th> Departman Adı </th>
+        <th> işlemler </th>
+        <th> Detaylar </th>
+    </tr>
+    @foreach (var item in Model.Item1.Data)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>
+                @Html.ActionLink("Güncelle", "Update", "Department", new { @id = item.ID }, new { @class = "btn btn-success", @style = "width : 40%;" })
+                @Html.ActionLink("Sil", "Delete", "Department", new { @id = item.ID }, new { @class = "btn btn-danger", @style = "width : 40%;" })
+            </td>
+            <td>
+                @Html.ActionLink("Detaya Git", "GetDetail", "Department", new { @id = item.ID }, new { @class = "btn btn-warning", @style = "width : 40%;" })
+            </td>
+        </tr>
+    }
+</table> *@
+
+
+<div class="container-fluid" style=" display:flex; flex-direction:column;width:80%;justify-content:center; align-items:center;">
+    <h1 style="color:black; margin-top:3%;"> Personel Listesi </h1>
+    <hr />
+    <table class="table table-bordered table-hover" style="margin-top:2%; text-align:center; margin-left:5%;">
+        <tr>
+            <th> Personel Adı </th>
+            <th> Personel Soyadı </th>
+            <th> Şehir</th>
+            <th> Departman Adı </th>
+            <th> İşlemler </th>
+            <th> Detay </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.CustomerName </td>
+                <td> @item.CustomerLastName </td>
+                <td> @item.CustomerCity </td>
+                <td> @item.DepartmentName </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Update", "Customer", new { @id = item.Id }, new { @class = "btn btn-success", @style = "width : 40%;" })
+                    @Html.ActionLink("Sil", "Delete", "Customer", new { @id = item.Id }, new { @class = "btn btn-danger", @style = "width : 40%;" })
+                </td>
+                <td> @Html.ActionLink("Detaya Git", "GetDetails", "Customer", new { @Id = item.Id }, new { @class = "btn btn-warning", @style = "width : 60%;" })</td>
+            </tr>
+        }
+    </table>
+
+    @Html.ActionLink("Yeni Personel Ekle", "Add", "Customer", null, new { @class = "btn btn-primary", @style = "margin-left:5%;" })
+</div>

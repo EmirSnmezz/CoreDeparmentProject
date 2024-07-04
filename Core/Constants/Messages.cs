@@ -11,9 +11,12 @@
         //  Update Process Messages
         public static string successUpdateMessage = "Güncelleme İşlemi Başarıyla Gerçekleşti.";
         public static string errorUpdateMessage = "Güncelleme İşlemi Sırasında Hata !";
-
+        //  GetData Process Messages
         public static string GetDataErrorMessage = "Görüntülenecek Veri Bulunamadı !";
         public static string GetDataSuccessMessage = "Veriler Başarıyla Çekildi.";
+        //
+        public static string LoginSuccessMessage = "Kullanıcı Giriş Başarılı";
+        public static string LoginErrorMessage = "Kullanıcı Girişi Başarısız ! Kullanıcı Adı / E-Posta Veya Şifre Hatalı ...";
 
     }
 }

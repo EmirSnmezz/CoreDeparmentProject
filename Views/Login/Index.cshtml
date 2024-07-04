@@ -1,6 +1,9 @@
 ﻿@{
-	Layout =  null;
+	Layout = null;
 }
+
+@using CoreDepartmentProject.Models.Entites.Concrete
+@model Admin;
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,16 +31,16 @@
 				<div class="agile-row">
 					<h2> Giriş Yap </h2>
 					<div class="login-agileits-top">
-						<form action="#" method="post">
+						<form action="@Url.Action("Login", "Login")" method="post">
 							<p> Kullanıcı Adı / E-Posta </p>
-							<input type="text" class="name" name="user name" required="" />
+							@Html.TextBoxFor(x => x.UserName, new { @class = "name" })
 							<p> Şifre </p>
-							<input type="password" class="password" name="Password" required="" />
+							@Html.TextBoxFor(x => x.Password, new { @class = "password", @type = "password" })
 							<label class="anim">
 								<input type="checkbox" class="checkbox">
 								<span> Beni Hatırla ?</span>
 							</label>
-							<input type="submit" value="Login">
+							<input type="submit" >
 						</form>
 					</div>
 					<div class="login-agileits-bottom">

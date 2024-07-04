@@ -10,12 +10,13 @@ using System.Text.Json;
 
 namespace CoreDepartmentProject.Controllers
 {
-    public class DepartmentController : Controller
+
+	[Authorize]
+	public class DepartmentController : Controller
     {
         public IDepartmentRepository _departmentRepository;
         public DepartmentController(IDepartmentRepository departmentRepository) => _departmentRepository = departmentRepository;
 
-        [Authorize]
         public IActionResult Index()
         {
             var result = _departmentRepository.GetAll().Data ;

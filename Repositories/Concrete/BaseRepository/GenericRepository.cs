@@ -72,11 +72,11 @@ namespace CoreDepartmentProject.Repositories.Concrete.BaseRepository
             }
         }
 
-        public IDataResult<T> GetEntity(int id)
+        public IDataResult<T> GetEntity(int Id)
         {
             using (Context _context = new Context())
             {
-                var result = _context.Set<T>().Find(id);
+                var result = _context.Set<T>().Find(Id);
                 if (result == null)
                 {
                     return new ErrorDataResult<T>(result, Messages.GetDataErrorMessage);

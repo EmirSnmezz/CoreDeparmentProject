@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\emirc\\source\\repos\\CoreDepartmentProject\\CoreDepartmentProject\\wwwroot\\03016_strossmayer_3840x2400.jpg",
+      "PackagePath": "staticwebassets\\03016_strossmayer_3840x2400.jpg"
+    },
+    {
       "Id": "C:\\Users\\emirc\\source\\repos\\CoreDepartmentProject\\CoreDepartmentProject\\wwwroot\\bootstrap\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.css"
     },

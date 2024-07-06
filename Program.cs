@@ -29,12 +29,7 @@ app.UseStaticFiles();
 app.MapControllerRoute
     (
     name:"Default",
-    pattern:"{controller=Home}/{action=Index}/{Id?}"
+    pattern: "{controller=Home}/{action=Index}" // route parametresi olarak id koyunca uygulama niyeyse sapýtýyor breakpoint mode a geçiyor bunu bi araþtýr bakalým neden oluyor bu, büyük ihtimal route parametre tanýmlamasýnda dikkat edilmesi gereken bir husus var.
     );
 
-app.MapControllerRoute
-    (
-    name: "Detail",
-    pattern: "{controller=Customer}/{Action=GetDetails}/{id?}"
-    );
 app.Run();

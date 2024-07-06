@@ -1,8 +1,6 @@
 ﻿@using CoreDepartmentProject.Models.Entites.Concrete;
-@model Department;
-@{
-     List<Customer> data = ViewBag.CustomersOfDepartment;
-}
+@model (Department, List<Customer>)
+
 
 <div class="container-fluid" style="width:80%; margin-top:2%;">
 
@@ -17,15 +15,12 @@
             </tr>
 
             <tr>
-                <td> @Model.Name </td>
-                <td> @DateTime.Now; </td>
+                <td> @Model.Item1.Name </td>
+                <td> @DateTime.Now </td>
                 <td>
-                    @foreach (var item in data)
+                    @foreach (var item in Model.Item2)     
                     {
-                        <p>  @item.FirstName @item.LastName </p>
-                        <br />
-                       
-                        
+                        <p>  @item.FirstName @item.LastName </p>                        
                     }
                 </td>
             </tr>

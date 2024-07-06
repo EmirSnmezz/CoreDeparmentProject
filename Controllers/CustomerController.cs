@@ -27,7 +27,7 @@ namespace CoreDepartmentProject.Controllers
         {
             var result = _customerRepository.GetDetailOfDto(Id);
 
-            return View("Detail", result);
+            return View("detail", result);
         }
 
         [HttpGet]
@@ -51,9 +51,9 @@ namespace CoreDepartmentProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Update(int id)
+        public IActionResult Update(int Id)
         {
-            var result = _customerRepository.GetEntity(id).Data;
+            var result = _customerRepository.GetEntity(Id).Data;
             if (result == null)
             {
                 throw new Exception(Messages.GetDataErrorMessage);

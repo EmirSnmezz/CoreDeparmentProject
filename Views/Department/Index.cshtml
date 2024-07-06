@@ -3,7 +3,7 @@
 
 <div class="container-fluid" style="width:80%;">
 
-    <table class="table table-bordered table-hover" style="margin-top:2%; text-align:center;  margin-left:5%;">
+    <table class=" table table-hover table-dark table-hover" style="margin-top:2%; text-align:center;  margin-left:5%;">
         <tr>
             <th> Departman Adı </th>
             <th> işlemler </th>
@@ -14,11 +14,11 @@
             <tr>
                 <td>@item.Name</td>
                 <td>
-                    @Html.ActionLink("Güncelle", "Update", "Department", new { @id = item.ID }, new { @class = "btn btn-success", @style = "width : 40%;" })
-                    @Html.ActionLink("Sil", "Delete", "Department", new { @id = item.ID }, new { @class = "btn btn-danger", @style = "width : 40%;" })
+                    @Html.ActionLink("Güncelle", "Update", "Department", new { @Id = item.ID }, new { @class = "btn btn-success", @style = "width : 40%;" })
+                    @Html.ActionLink("Sil", "Delete", "Department", new { @Id = item.ID }, new { @class = "btn btn-danger", @style = "width : 40%;" })
                 </td>
                 <td>
-                    @Html.ActionLink("Detaya Git", "GetDetail", "Department", new { @id = item.ID }, new { @class = "btn btn-warning", @style = "width : 40%;" })
+                    @Html.ActionLink("Detaya Git", "GetDetail", "Department", new { @Id = item.ID }, new { @class = "btn btn-warning", @style = "width : 40%;" })
                 </td>
             </tr>
         }

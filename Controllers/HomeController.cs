@@ -9,18 +9,16 @@ namespace CoreDepartmentProject.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        ICustomerRepository _customerRepository;
         IDepartmentRepository _departmentRepository;
-        public HomeController(ICustomerRepository customerRepository, IDepartmentRepository departmentRepository)
-        {
-            _customerRepository = customerRepository;
+        ICustomerRepository _customerRepository;
+        public HomeController(IDepartmentRepository departmentRepository, ICustomerRepository customerRepository)
+            {
             _departmentRepository = departmentRepository;
-        }
-
-        [Authorize]
+            _customerRepository = customerRepository;
+            }
         public IActionResult Index()
         {
-            var result = _customerRepository.GetAllDto();
+            var result = (_departmentRepository.GetAll().Data, _customerRepository.GetAllDto());
             return View(result);
         }
     }

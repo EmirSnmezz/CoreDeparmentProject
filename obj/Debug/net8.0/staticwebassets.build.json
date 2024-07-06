@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Hp+vjwjUdbxS5FpsQahY0/uAvRWXJXhH5BnowEZIFd4=",
+  "Hash": "dGJ1DKKZZmTe7HNUwIt1TXCRgkc4k/jW95sWd7V9h9M=",
   "Source": "CoreDepartmentProject",
   "BasePath": "_content/CoreDepartmentProject",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\emirc\\source\\repos\\CoreDepartmentProject\\CoreDepartmentProject\\wwwroot\\03016_strossmayer_3840x2400.jpg",
+      "SourceId": "CoreDepartmentProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\emirc\\source\\repos\\CoreDepartmentProject\\CoreDepartmentProject\\wwwroot\\",
+      "BasePath": "_content/CoreDepartmentProject",
+      "RelativePath": "03016_strossmayer_3840x2400.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\03016_strossmayer_3840x2400.jpg"
+    },
     {
       "Identity": "C:\\Users\\emirc\\source\\repos\\CoreDepartmentProject\\CoreDepartmentProject\\wwwroot\\bootstrap\\css\\bootstrap.css",
       "SourceId": "CoreDepartmentProject",

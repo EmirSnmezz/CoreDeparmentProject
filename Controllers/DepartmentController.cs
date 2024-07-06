@@ -36,9 +36,9 @@ namespace CoreDepartmentProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Update(int id)
+        public IActionResult Update(int Id)
         {
-            var result = _departmentRepository.GetEntity(id).Data;
+            var result = _departmentRepository.GetEntity(Id).Data;
             if (result == null)
             {
                 throw new Exception(Messages.GetDataErrorMessage);
@@ -56,9 +56,9 @@ namespace CoreDepartmentProject.Controllers
 
         }
 
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int Id)
         {
-            var result = _departmentRepository.GetEntity(id).Data;
+            var result = _departmentRepository.GetEntity(Id).Data;
 
             if (result == null)
             {
@@ -69,24 +69,10 @@ namespace CoreDepartmentProject.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult GetDetail(int id)
+        public IActionResult GetDetail(int Id)
         {
-            Department result = (Department)_departmentRepository.GetEntity(id).Data;
-            ViewBag.CustomersOfDepartment = _departmentRepository.GetCustomersById(id).Data;
+            var result = (_departmentRepository.GetEntity(Id).Data , _departmentRepository.GetCustomersById(Id).Data);
             return View(result);
-        }
-
-        public JsonResult jsonTest()
-        {
-            var result = _departmentRepository.GetAll().Data;
-
-            List<JsonResult>? jsonResult = new List<JsonResult>();
-            foreach (var item in result)
-            {
-                jsonResult.Add(Json(item));
-            }
-
-            return Json(jsonResult);
         }
     }
 }

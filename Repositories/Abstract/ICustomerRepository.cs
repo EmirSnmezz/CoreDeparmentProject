@@ -9,7 +9,7 @@ namespace CoreDepartmentProject.Repositories.Abstract
     public interface ICustomerRepository : IRepository<Customer>
     {
         public List<CustomerDto> GetAllDto();
-        public CustomerDto GetDetailOfDto(int id);
+        public CustomerDto GetDetailOfDto(int Id);
         public List<SelectListItem> SelectOfDepartmentData();
     }
 }

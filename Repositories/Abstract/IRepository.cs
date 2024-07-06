@@ -11,6 +11,6 @@ namespace CoreDepartmentProject.Repositories.Abstract
         public IResultt Update(T entity);
         public IResultt Delete(T entity);
         public IDataResult<List<T>> GetAll();
-        public IDataResult<T> GetEntity(int id);
+        public IDataResult<T> GetEntity(int Id);
     }
 }

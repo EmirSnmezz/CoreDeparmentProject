@@ -31,14 +31,14 @@ namespace CoreDepartmentProject.Repositories
 
             }
         }
-        public CustomerDto GetDetailOfDto(int id)
+        public CustomerDto GetDetailOfDto(int Id)
         {
             using (Context context = new Context())
             {
                 CustomerDto data = (from customerdata in context.Customers
                                     join departmentData in context.Departments
                                     on customerdata.DepartmentId equals departmentData.ID
-                                    where customerdata.ID == id
+                                    where customerdata.ID == Id
                                     select new CustomerDto
                                     {
                                         Id = customerdata.ID,
@@ -46,12 +46,7 @@ namespace CoreDepartmentProject.Repositories
                                         CustomerLastName = customerdata.LastName,
                                         CustomerCity = customerdata.City,
                                         DepartmentName = departmentData.Name
-                                    }).First(x => x.Id == id);
-
-                if (data == null)
-                {
-                    throw new Exception("Null");
-                }
+                                    }).First(x => x.Id == Id);
                 return data;
             }
         }
